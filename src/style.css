@@ -24,7 +24,8 @@ body {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -88,6 +89,42 @@ h1 {
   box-shadow: 0 0 14px rgba(74, 222, 128, 0.9);
 }
 
+.page-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 5px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+}
+
+.page-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.page-nav a:hover,
+.page-nav a[aria-current="page"] {
+  background: rgba(139, 92, 246, 0.2);
+  color: #f5f3ff;
+}
+
+.page-nav a span {
+  min-width: 22px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.18);
+  text-align: center;
+  font-size: 0.78rem;
+}
+
 .player-panel {
   display: flex;
   flex-direction: column;
@@ -110,6 +147,304 @@ h1 {
   border-radius: 12px;
   padding: 12px 14px;
   font-size: 1rem;
+}
+
+.crewmate-panel {
+  margin-bottom: 24px;
+  padding: 18px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+}
+
+.section-heading,
+.crewmate-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-heading {
+  margin-bottom: 16px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 2px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.crewmate-count,
+.crewmate-role {
+  color: #c4b5fd;
+  font-size: 0.82rem;
+}
+
+.crewmate-profile-link {
+  color: #f8fafc;
+  font-weight: 700;
+  text-decoration-color: rgba(196, 181, 253, 0.55);
+  text-underline-offset: 3px;
+}
+
+.crewmate-profile-link:hover {
+  color: #c4b5fd;
+}
+
+.crewmate-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.crewmate-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.crewmate-field label {
+  color: #cbd5e1;
+  font-size: 0.82rem;
+}
+
+.crewmate-field input,
+.crewmate-field select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.8);
+  color: #f8fafc;
+  border-radius: 10px;
+  padding: 9px 10px;
+}
+
+.crewmate-submit {
+  align-self: end;
+}
+
+.crewmate-panel .supabase-status {
+  margin: 12px 0 0;
+}
+
+.crewmate-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 10px;
+}
+
+.crewmate-card,
+.empty-crew {
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.crewmate-card-header > div {
+  display: grid;
+  gap: 2px;
+}
+
+.crewmate-card-header .mini-btn {
+  padding: 7px 10px;
+}
+
+.crewmate-card-actions,
+.crewmate-edit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.crewmate-edit-form,
+.crewmate-edit-form label {
+  display: grid;
+  gap: 6px;
+}
+
+.crewmate-edit-form {
+  gap: 10px;
+}
+
+.crewmate-edit-form label span {
+  color: #cbd5e1;
+  font-size: 0.78rem;
+}
+
+.crewmate-edit-form input,
+.crewmate-edit-form select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.8);
+  color: #f8fafc;
+  border-radius: 9px;
+  padding: 7px 9px;
+}
+
+.crewmate-edit-attributes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.crewmate-attributes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 12px 0 0;
+}
+
+.crewmate-attributes div {
+  display: grid;
+  gap: 2px;
+}
+
+.crewmate-attributes dt {
+  color: #94a3b8;
+  font-size: 0.72rem;
+}
+
+.crewmate-attributes dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.empty-crew {
+  grid-column: 1 / -1;
+  color: #94a3b8;
+}
+
+.crew-summary-panel {
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 16px;
+}
+
+.crew-summary-panel .section-heading {
+  margin-bottom: 4px;
+}
+
+.crew-summary-intro {
+  margin: 0;
+  color: #94a3b8;
+}
+
+.crew-summary-panel .crewmate-list {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin-top: 20px;
+}
+
+.add-crew-link {
+  display: inline-flex;
+  margin-top: 18px;
+  text-decoration: none;
+}
+
+.crew-profile-panel {
+  padding: clamp(20px, 5vw, 36px);
+  background:
+    radial-gradient(circle at top right, rgba(139, 92, 246, 0.16), transparent 38%),
+    rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 18px;
+}
+
+.profile-back-link {
+  display: inline-block;
+  margin-bottom: 26px;
+  color: #c4b5fd;
+  text-decoration: none;
+}
+
+.profile-back-link:hover {
+  color: #f5f3ff;
+}
+
+.crew-profile-panel > .eyebrow {
+  margin-bottom: 8px;
+}
+
+.crew-profile-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.crew-profile-heading h2 {
+  margin: 0 0 4px;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+}
+
+.crew-profile-badge {
+  padding: 6px 10px;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.16);
+  color: #dbeafe;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.crew-profile-intro {
+  margin: 20px 0;
+  color: #cbd5e1;
+}
+
+.crew-profile-attributes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.crew-profile-attributes div {
+  padding: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 12px;
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.crew-profile-attributes dt {
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.crew-profile-attributes dd {
+  margin: 6px 0 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.crew-profile-attributes dd span {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.crew-profile-url {
+  display: grid;
+  gap: 6px;
+  margin-top: 24px;
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.crew-profile-url a {
+  width: fit-content;
+  max-width: 100%;
+  color: #c4b5fd;
+  overflow-wrap: anywhere;
 }
 
 .arena {
@@ -398,6 +733,19 @@ h1 {
     align-items: flex-start;
   }
 
+  .page-nav a {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .crew-profile-attributes {
+    gap: 8px;
+  }
+
+  .crew-profile-attributes div {
+    padding: 12px 10px;
+  }
+
   .arena {
     grid-template-columns: 1fr;
   }
@@ -412,8 +760,18 @@ h1 {
     grid-template-columns: repeat(2, minmax(120px, 1fr));
   }
 
+  .crewmate-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   #my-scores-list li {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 460px) {
+  .crewmate-form {
+    grid-template-columns: 1fr;
   }
 }
